@@ -62,6 +62,8 @@ user: admin
 password: admin
 ```
 
+If you issue login then try this `FLASK_APP=airflow.www.app flask fab reset-password`
+
 Now you can login to the web `http://localhost:8080/`
 
 5. To stop the webserver and scheduler, use the following script.
