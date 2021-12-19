@@ -1,10 +1,6 @@
 # Apache-Airflow-Starter
 
-1. Set the user id with `echo -e "AIRFLOW_UID=$(id -u)" > .env`
-2. On all operating systems, you need to run database migrations and create the first user account. To do it, run `docker-compose up airflow-init`
-3. Run `docker-compose up`
-
-# Setting up the virtual environment
+## Setting up the virtual environment
 
 Conda is the preferred environment manager for my python ecosystem. I have worked with `python 3.7.1`
 
@@ -13,15 +9,17 @@ conda create -n aflow python=3.7 pip --y
 conda activate aflow
 ```
 
-Now we can install the packages.
+Now we can install the packages required for the project by doing this or manually.
 
 ```
 pip install -r requirements.txt
 ```
 
-# Setting up the airflow environment
+## Setting up the airflow environment
 
-Do the following or run `bash setup_airflow.sh`
+> Note: You should activate the conda environment before running the following commands.
+
+1. Do the following or run `bash setup_airflow.sh`.
 
 ```
 # Configurations
@@ -37,7 +35,7 @@ pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}
 airflow db init
 ```
 
-Change few configurations by doing the following:
+2. Change few configurations by doing the following:
 
 ```
 # Inside airflow.cfg
@@ -45,13 +43,13 @@ enable_xcom_pickling = True  # needed for Great Expectations airflow provider
 load_examples = False  # don't clutter webserver with examples
 ```
 
-Reset airflow db with the following script and set the admin password `admin`.
+3. Reset airflow db with the following script and set the admin password `admin`.
 
 ```
 bash init_airflow_db.sh
 ```
 
-Launch webserver with the following script.
+4. Launch webserver with the following script.
 
 ```
 bash start_airflow.sh
@@ -66,7 +64,7 @@ password: admin
 
 Now you can login to the web `http://localhost:8080/`
 
-To stop the webserver and scheduler, use the following script.
+5. To stop the webserver and scheduler, use the following script.
 
 ```
 bash stop_airflow.sh
