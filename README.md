@@ -62,7 +62,7 @@ user: admin
 password: admin
 ```
 
-If you issue login then try this `FLASK_APP=airflow.www.app flask fab reset-password`
+If you issue login then try this `FLASK_APP=airflow.www.app flask fab reset-password` or `FLASK_APP=airflow.www.app flask fab create-admin`
 
 Now you can login to the web `http://localhost:8080/`
 

@@ -33,3 +33,5 @@ with DAG(
     sub = PythonOperator(
         task_id="sub", python_callable=sub,
     )
+
+add >> sub
