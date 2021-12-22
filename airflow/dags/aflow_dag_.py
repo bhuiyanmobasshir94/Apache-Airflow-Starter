@@ -20,7 +20,7 @@ with DAG(
     description="Datalake to datawarehouse creation",
     default_args=default_args,
     schedule_interval="@daily",
-    schedule_interval=None,
+    # schedule_interval=None,
     start_date=days_ago(2),
     tags=["aflow", "dwh", "datalake", "etl/elt"],
 ) as dag:
